@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/rosaoasis.png">
+  <link rel="icon" href="/img/rosaoasis.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Annie Lei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="原教程在此。这篇教程精简了原教程的内容，并在其基础上添加了一些额外情况的设置。 注：以下列出的所有命令前面的 $ 符号表示 macOS 普通用户的命令提示符，Windows 用户在输入命令时不需要输入 $ 。      Hexo+Netlify搭建&amp;更新个人博客教程主要思路：Hexo建站，Github托管代码，Netlify部署。 I.搭建博客一、安装前置 安装 Node.js 访问No">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Netlify搭建&amp;更新个人博客教程">
+<meta property="og:url" content="http://example.com/2025/08/26/Hexo-Netlify%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E6%9B%B4%E6%96%B0%E6%96%87%E7%AB%A0%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Rosa Oasis">
+<meta property="og:description" content="原教程在此。这篇教程精简了原教程的内容，并在其基础上添加了一些额外情况的设置。 注：以下列出的所有命令前面的 $ 符号表示 macOS 普通用户的命令提示符，Windows 用户在输入命令时不需要输入 $ 。      Hexo+Netlify搭建&amp;更新个人博客教程主要思路：Hexo建站，Github托管代码，Netlify部署。 I.搭建博客一、安装前置 安装 Node.js 访问No">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-26T06:42:09.000Z">
+<meta property="article:modified_time" content="2025-08-26T17:40:33.710Z">
+<meta property="article:author" content="Annie Lei">
+<meta property="article:tag" content="代码">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo+Netlify搭建&amp;更新个人博客教程 - Rosa Oasis</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2025-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Rosa Oasis</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo+Netlify搭建&amp;更新个人博客教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-26 14:42" pubdate>
+          2025年8月26日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo+Netlify搭建&amp;更新个人博客教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>原教程<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/39923772">在此</a>。这篇教程精简了原教程的内容，并在其基础上添加了一些额外情况的设置。</p>
+<p>注：以下列出的所有命令前面的 $ 符号表示 macOS 普通用户的命令提示符，Windows 用户在输入命令时不需要输入 $ 。</p>
+</blockquote>
+<br>
+
+<br>
+
+<h1 id="Hexo-Netlify搭建-更新个人博客教程"><a href="#Hexo-Netlify搭建-更新个人博客教程" class="headerlink" title="Hexo+Netlify搭建&amp;更新个人博客教程"></a>Hexo+Netlify搭建&amp;更新个人博客教程</h1><p>主要思路：Hexo建站，Github托管代码，Netlify部署。</p>
+<h2 id="I-搭建博客"><a href="#I-搭建博客" class="headerlink" title="I.搭建博客"></a>I.搭建博客</h2><h3 id="一、安装前置"><a href="#一、安装前置" class="headerlink" title="一、安装前置"></a>一、安装前置</h3><ol>
+<li><p><strong>安装 Node.js</strong></p>
+<p>访问<a target="_blank" rel="noopener" href="https://www.nodejs.com.cn/download.html">Node.js官网</a>，下载长期维护版的安装包，随后根据指引安装。</p>
+</li>
+<li><p><strong>安装 Git</strong></p>
+<p>访问<a target="_blank" rel="noopener" href="https://www.nodejs.com.cn/download.html">Git官网</a>，下载安装包并按部就班安装。</p>
+</li>
+<li><p><strong>注册Github账号</strong></p>
+<p>访问<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>，用邮箱注册一个Github账号。记住注册所用的邮箱和账号的用户名。</p>
+</li>
+<li><p><strong>注册Netlify账号</strong></p>
+<p>访问<a target="_blank" rel="noopener" href="https://www.netlify.com/">Netlify官网</a>注册一个账号。</p>
+</li>
+<li><p><strong>安装 Hexo</strong></p>
+<p>调出命令提示符&#x2F;打开终端，输入npm命令安装Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+
+<p>安装完成后可以输入以下命令检查是否安装妥当：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo -v<br></code></pre></td></tr></table></figure>
+
+<p>如能显示hexo的版本和npm的版本，即安装成功。</p>
+</li>
+</ol>
+<br>
+
+<h3 id="二、搭建Hexo"><a href="#二、搭建Hexo" class="headerlink" title="二、搭建Hexo"></a>二、搭建Hexo</h3><ol>
+<li><p><strong>创建Hexo项目</strong></p>
+<p>输入以下命令创建项目文件夹路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init /PATH/TO/hexo<br></code></pre></td></tr></table></figure>
+
+<p><span id="jump"></span>切换至刚刚创建的文件夹。这里的路径建议为绝对路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /PATH/TO/hexo<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>！如果项目文件夹不在C盘，则输入命令（路径必须为绝对路径，例如 F:\Random\Blog）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /d /PATH/TO/hexo<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>初始化项目</strong></p>
+<p>运行了刚才的 <code>hexo init</code> 命令，我们的项目文件夹内已经安好了必要组件。现在，通过npm来初始化Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install<br></code></pre></td></tr></table></figure>
+
+<p>等待搭建完成。这样，我们的网站就建好了。</p>
+<p>使用以下命令预览我们的网站：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>随后访问命令提示符或终端给出的网址即可预览。网址一般是 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 或者 <a target="_blank" rel="noopener" href="http://0.0.0.0:4000/">http://0.0.0.0:4000/</a> 。</p>
+<p>若要继续设置，在窗口焦点处于命令提示符 &#x2F; 终端时，按 Ctrl+C &#x2F; Command+C 。</p>
+<p>在这之后，可以设置基础参数、安装Hexo主题、撰写新博文。具体操作方法<a href="#II.%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2">见下</a>。</p>
+</li>
+<li><p><strong>建站前最后的准备工作</strong></p>
+<p>清除缓存数据，并为项目生成静态文件用以上传：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo clean<br>$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>鉴于我们不需要对网站内容进行版本控制，我们可将该文件夹添加至.gitignore文档中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;/public&quot;</span> &gt;&gt; .gitignore<br></code></pre></td></tr></table></figure>
+
+<p>接下来，我们要将网站内容推送至Github这个代码托管服务上。</p>
+</li>
+</ol>
+<br>
+
+<h3 id="三、搭建网站"><a href="#三、搭建网站" class="headerlink" title="三、搭建网站"></a>三、搭建网站</h3><ol>
+<li><p><strong>配置Git</strong></p>
+<p>如果是第一次安装Git，那么在使用前，我们首先需要配置Git的基本信息，这些信息包括我们的Github账户用户名和注册邮箱。</p>
+<p>以用户名 <code>YourName</code>，邮箱 <code>YourEmail@example.com</code> 为例，打开命令提示符&#x2F;终端，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git config --global user.name <span class="hljs-string">&quot;YourName&quot;</span><br>$ git config --global user.email <span class="hljs-string">&quot;YourEmail@example.com&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>配置好Git之后，可以用以下命令检查是否已成功安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git --version<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong><span id="deploy">开始托管</span></strong></p>
+<p>登录Github账号，点击绿色按钮 <code>New</code>（Repository）新建一个仓库。为仓库命名时记住这个名字，后面会用。以下将会以 <code>hexo_netlify</code> 作为示例仓库名。</p>
+<p>注意，不要在 <code>Initialize this repository with a README</code> 前打勾，<code>Add .gitignore</code> 和 <code>Add a license</code> 处请选择 None。</p>
+<p>随后，在命令提示符或终端里切换到项目文件夹（<a href="#jump">方法见此</a>），初始化仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git init<br></code></pre></td></tr></table></figure>
+<p>通过 <code>git add</code> 跟踪指定项目文件，然后执行 <code>git commit</code> 提交：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git add .<br>$ git commit -m <span class="hljs-string">&quot;initial commit&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>回到之前我们创建GitHub仓库完成的页面，复制远程仓库链接（一般长这样：<a target="_blank" rel="noopener" href="https://github.com/yourName/hexo_netlify.git">https://github.com/yourName/hexo_netlify.git</a> ），在命令控制符&#x2F;终端输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git remote add origin &lt;远程仓库链接&gt;<br></code></pre></td></tr></table></figure>
+
+<p>可以用 <code>git remote -v</code> 来验证链接是否正确。</p>
+<p>确认准确无误后，用以下指令推送本地仓库内容至GitHub：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push origin master<br></code></pre></td></tr></table></figure>
+
+<p>等待上传完成。</p>
+<p>至此，源代码就全部上传到Github了。接下来我们开始通过Netlify来发布网站。</p>
+</li>
+<li><p><strong>发布网站</strong></p>
+<p>登录Netlify账户，进入<a target="_blank" rel="noopener" href="https://app.netlify.com/account/sites">建站页面</a>，点击 <code>New site from Git</code> 进入下一步。</p>
+<p>首先，在第一步里选择 <code>Github</code>，按部就班关联 Github 账户。</p>
+<p>如果是第一次关联两个账户，则点击绿色按钮 <code>Authorize netlify</code> 同意授权Netlify访问GitHub上的仓库内容。</p>
+<p>授权完毕后，页面会跳转回Netlify，来到第二步。在这里选择我们刚才新建的Github仓库。</p>
+<p>然后来到第三步，我们只需将 <code>Build command</code> 参数设置为 <strong>hexo generate</strong> 即可。</p>
+<p>最后，点击 <code>Deploy site</code>，等待构建完成即可。</p>
+<br>
+
+<p>Netlify会在网站发布成功的同时提供给你一个以 *.netlify.com 为后缀、随机生成的英文名为前缀的子域名。假如你不喜欢Netlify自动生成的子域名，并且还未来得及购买域名，可以通过 <code>Domain settings</code> &gt; <code>Edit site name</code> 来重命名。</p>
+</li>
+</ol>
+<br>
+
+<br>
+
+<h2 id="II-更新博客"><a href="#II-更新博客" class="headerlink" title="II.更新博客"></a>II.更新博客</h2><p>包括设置、美化、更新博客的一系列操作。</p>
+<h3 id="一、设置基础参数"><a href="#一、设置基础参数" class="headerlink" title="一、设置基础参数"></a>一、设置基础参数</h3><p>打开项目文件夹，用代码编辑器（推荐 NotePad++ 或者 VS Code）打开 <code>_config.yaml</code> 文件。</p>
+<p>在靠前的部分，我们可以看到以下设置：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"># Site<br><span class="hljs-symbol">title:</span> Hexo<br><span class="hljs-symbol">subtitle:</span> <span class="hljs-comment">&#x27;&#x27;</span><br><span class="hljs-symbol">description:</span> <span class="hljs-comment">&#x27;&#x27;</span><br><span class="hljs-symbol">keywords:</span><br><span class="hljs-symbol">author:</span><br><span class="hljs-symbol">language:</span> en<br><span class="hljs-symbol">timezone:</span> <span class="hljs-comment">&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>其中，<code>title</code> 是网站名称，<code>subtitle</code> 是副标题，<code>author</code> 是建站者姓名，<code>language</code> 是网站的语言（简体中文是 zh-CN）。如有需要请自行修改。</p>
+<br>
+
+<h3 id="二、安装主题"><a href="#二、安装主题" class="headerlink" title="二、安装主题"></a>二、安装主题</h3><ol>
+<li><p><strong>安装</strong></p>
+<p>从Github上搜索并下载心仪的主题，随后根据其介绍页的教程安装。</p>
+<p>通过命令控制符&#x2F;终端安装时，记得先切换至项目文件夹再安装。</p>
+</li>
+<li><p><strong>配置</strong></p>
+<p>打开项目文件夹，用代码编辑器（推荐 NotePad++ 或者 VS Code）打开 <code>_config.yaml</code> 文件。</p>
+<p>搜索关键词“theme”，将默认的 landscape 更改为安装好的主题的名字即可。</p>
+<p>若希望在主题上做进一步的修改，则在项目文件夹根目录中打开名为 _config.[theme-name].yaml 的文件，修改其中的设置即可。</p>
+</li>
+</ol>
+<br>
+
+<h3 id="三、撰写新内容"><a href="#三、撰写新内容" class="headerlink" title="三、撰写新内容"></a>三、撰写新内容</h3><ol>
+<li><p><strong>撰写新博文</strong></p>
+<ul>
+<li><strong>a. 生成博文文件</strong></li>
+</ul>
+<p>在命令控制符&#x2F;终端里，先切换到项目文件夹下，然后输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;新博文&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这样，在项目文件夹下 source&#x2F;_post&#x2F; 就会出现一个 新博文.md 文件。在这个新生成的 Markdown 文件里接着已经生成的内容撰写博文即可。Markdown 语法见<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">此处</a>。</p>
+<p>如果我们不希望我们的文章发布出去，可以先生成一个草稿。所有草稿内容都不会被发布出来。</p>
+<p>在命令控制符&#x2F;终端里，先切换到项目文件夹下，然后输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new draft <span class="hljs-string">&quot;新博文草稿&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这样，在项目文件夹下 source&#x2F;_draft&#x2F; 就会出现一个 新博文草稿.md 文件。</p>
+<br>
+
+<ul>
+<li><strong>b. 配置博文</strong></li>
+</ul>
+<p>打开新生成的.md文件后，我们可以看到里面已经有了一些内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">新博文</span><br><span class="hljs-attr">date:</span> <span class="hljs-string">20xx-xx-xx</span> <span class="hljs-string">xx:xx:xx</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+
+<p>这里的 <code>title</code> 就是博文的标题，<code>date</code> 是发布日期，<code>tags</code> 则是该博文的所属的一系列tag，可以自定义。</p>
+<p>如果想为博文添加多个tag，我们可以这样编辑 <code>tags</code> 字段：</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">tags:</span><br>- 标签1<br>- 标签2<br>...<br></code></pre></td></tr></table></figure>
+
+<p>除了以上默认的三个参数，我们还可以写以下这些参数：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vbnet"><span class="hljs-symbol">updated:</span> 更新时间，格式和<span class="hljs-type">date</span>相同<br><span class="hljs-symbol">categories:</span> 所属分类<br><span class="hljs-symbol">excerpt:</span> 文章摘要<br><span class="hljs-symbol">lang:</span> 文章语言<br><span class="hljs-symbol">published:</span> 是否发布<br><span class="hljs-symbol">author:</span> 文章作者<br><span class="hljs-symbol">keywords:</span> 关键词<br><span class="hljs-symbol">description:</span> 文章简介<br></code></pre></td></tr></table></figure>
+
+<p><strong>※</strong> <code>categories</code> 和 <code>tags</code> 的相同点与区别：</p>
+<ul>
+<li><p>设置 <code>categories</code> 和 <code>tags</code> 时格式几乎一样。<code>categories</code> 也可以这样设置：</p>
+ <figure class="highlight ldif"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ldif"><span class="hljs-attribute">categories</span>:<br><span class="hljs-literal">-</span> 类别1<br><span class="hljs-literal">-</span> 类别2<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>然而，<code>categories</code> 可以设置多级结构，<code>tags</code> 不行。例如，<code>categories</code> 可以这样设置：</p>
+ <figure class="highlight ldif"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ldif"><span class="hljs-attribute">categories</span>:<br><span class="hljs-literal">-</span> [类别1, 类别2]   // 属于类别1/类别2，类别2是类别1的子类别<br><span class="hljs-literal">-</span> 类别3<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>添加新页面（Page）</strong></p>
+<p>在命令控制符&#x2F;终端里，先切换到项目文件夹下，然后输入命令（例）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new page about<br></code></pre></td></tr></table></figure>
+
+<p>这样，在项目文件夹下 source&#x2F;about&#x2F; 就会出现一个 index.md 文件。编辑此.md文件即可。</p>
+<p>在我们用 <code>hexo server</code> 预览网站时，访问 .&#x2F;about&#x2F;就可以看到在index.md中编辑的内容了。</p>
+</li>
+</ol>
+<br>
+
+<h3 id="四、更新博客"><a href="#四、更新博客" class="headerlink" title="四、更新博客"></a>四、更新博客</h3><p>在命令控制符&#x2F;终端里，先切换到项目文件夹下，然后清除旧缓存数据并生成静态页面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo clean<br>$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>启用本地服务器预览更新后的网站：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>确认无误后退出预览，开始部署到线上。</p>
+<p>此处基本是重复 I.搭建博客 &gt; 三、搭建网站 &gt; 2.开始托管（<a href="#deploy">点击此处</a>）中的命令操作，但略有不同。</p>
+<p>首先初始化Git，然后通过 <code>git add</code> 跟踪指定项目文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git init<br>$ git add .<br></code></pre></td></tr></table></figure>
+
+<p>如果记得自己修改、增添、删除了什么文件，也可以直接 add 指定文件。不过这么做比较麻烦。</p>
+<p>然后执行 <code>git commit</code> 提交：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git commit -m <span class="hljs-string">&quot;new post added&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>这里的 <code>&quot;new post added&quot;</code> 可以认作是此次更新的更新信息，可自定义。</p>
+<p>最后直接用以下指令推送本地仓库内容至GitHub：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git push origin master<br></code></pre></td></tr></table></figure>
+
+<p>等待上传完成即可。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%99%E7%A8%8B/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%BB%A3%E7%A0%81/" class="print-no-link">#代码</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/26/RMMV-RMMZ%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E9%80%9A%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" title="RMMZ插件开发通用代码片段">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">RMMZ插件开发通用代码片段</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/26/%E7%A2%8E%E7%A2%8E%E5%BF%B5-1/" title="碎碎念#1">
+                        <span class="hidden-mobile">碎碎念#1</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
