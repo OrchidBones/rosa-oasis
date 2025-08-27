@@ -1,6 +1,6 @@
 ---
 title: Bitmap圆角矩形
-date: 2025-08-26 23:38:13、
+date: 2025-08-26 23:38:13
 categories:
 - [存档, RM开发, 插件脚本]
 tags:

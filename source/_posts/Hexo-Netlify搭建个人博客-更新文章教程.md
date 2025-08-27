@@ -66,13 +66,7 @@ tags:
    $ hexo init /PATH/TO/hexo
    ```
 
-   <span id="jump"></span>切换至刚刚创建的文件夹。这里的路径建议为绝对路径：
-
-   ```bash
-   $ cd /PATH/TO/hexo
-   ```
-
-   **注意**！如果项目文件夹不在C盘，则输入命令（路径必须为绝对路径，例如 F:\Random\Blog）：
+   <span id="jump"></span>切换至刚刚创建的文件夹，输入命令（路径必须为绝对路径，例如 F:\Random\Blog）：
 
    ```bash
    $ cd /d /PATH/TO/hexo
@@ -109,7 +103,7 @@ tags:
    $ hexo generate
    ```
 
-   鉴于我们不需要对网站内容进行版本控制，我们可将该文件夹添加至.gitignore文档中：
+   鉴于我们不需要对网站内容进行版本控制，我们可将 public/ 文件夹添加至 `.gitignore` 文档中：
 
    ```bash
    $ echo "/public" >> .gitignore
@@ -138,7 +132,7 @@ tags:
    $ git --version
    ```
 
-2. **<span id="deploy">开始托管</span>**
+2. **开始托管**
    
    登录Github账号，点击绿色按钮 `New`（Repository）新建一个仓库。为仓库命名时记住这个名字，后面会用。以下将会以 `hexo_netlify` 作为示例仓库名。
 
@@ -348,9 +342,13 @@ $ hexo generate
 $ hexo server
 ```
 
-确认无误后退出预览，开始部署到线上。
+鉴于我们不需要对网站内容进行版本控制，我们可将新生成的 public/ 文件夹添加至`.gitignore`文档中：
 
-此处基本是重复 I.搭建博客 > 三、搭建网站 > 2.开始托管（[点击此处](#deploy)）中的命令操作，但略有不同。
+```bash
+$ echo "/public" >> .gitignore
+```
+
+确认无误后退出预览，开始部署到线上。
 
 首先初始化Git，然后通过 `git add` 跟踪指定项目文件：
 
