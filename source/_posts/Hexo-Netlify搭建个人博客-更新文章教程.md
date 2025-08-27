@@ -342,13 +342,13 @@ $ hexo generate
 $ hexo server
 ```
 
+确认无误后退出预览，开始部署到线上。
+
 鉴于我们不需要对网站内容进行版本控制，我们可将新生成的 public/ 文件夹添加至`.gitignore`文档中：
 
 ```bash
 $ echo "/public" >> .gitignore
 ```
-
-确认无误后退出预览，开始部署到线上。
 
 首先初始化Git，然后通过 `git add` 跟踪指定项目文件：
 
@@ -374,3 +374,47 @@ $ git push origin master
 ```
 
 等待上传完成即可。
+
+<br>
+
+※ `git push origin master` 运行后有可能会报错：
+
+```
+fatal: unable to access 'https://github.com/YourName/hexo_netlify.git/': Failed to connect to github.com port 443 after 21108 ms: Could not connect to server
+```
+此时，我们只需向Git设置代理即可。
+
+首先关闭VPN（如果开着的话），然后查看电脑系统的代理设置。
+
+- **Windows**
+  
+  打开“设置” > “网络和 Internet” > “代理”。
+  
+  点击代理设置页面下“使用代理服务器”的“设置”按钮，我们就可以看到代理服务器地址和端口。
+
+- **MacOS**
+  
+  打开“系统偏好设置” > “网络”。
+  
+  选择正在使用的网络连接（如 Wi-Fi 或有线），然后点击“高级”。
+  
+  转到“代理”标签页，我们可以看到代理服务器的设置。
+
+由此，我们就得到了代理地址（通常是 http://127.0.0.1）和端口（数字，如5000等）。
+
+随后配置Git全局代理。在命令控制符/终端输入：
+
+```bash
+$ git config --global http.proxy <代理地址>:<端口>
+```
+
+最后，再运行一次 `git push origin master` 命令就可以了。
+
+注意，如果配置了错误的Git全局代理，可以输入以下命令清除：
+
+```bash
+$ git config --global --unset http.proxy
+$ config --global --unset https.proxy
+```
+
+随后再设置一次即可。
