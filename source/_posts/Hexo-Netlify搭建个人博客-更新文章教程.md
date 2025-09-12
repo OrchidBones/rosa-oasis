@@ -2,7 +2,7 @@
 title: Hexo+Netlify搭建&更新个人博客教程
 date: 2025-08-26 14:42:09
 categories:
-- [教程, 编程]
+- [教程, 编程教程]
 tags:
 - 代码
 ---

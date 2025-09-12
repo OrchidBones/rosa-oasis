@@ -2,7 +2,7 @@
 title: MV/MZ项目导至Android端教程
 date: 2025-08-27 18:58:03
 categories:
-- [教程, RM]
+- [教程, RM教程]
 tags:
 - 代码
 - RMMV

@@ -2,7 +2,7 @@
 title: Python安装+运行
 date: 2025-08-27 15:17:06
 categories:
-- [教程, 编程]
+- [教程, 编程教程]
 tags:
 - 代码
 ---

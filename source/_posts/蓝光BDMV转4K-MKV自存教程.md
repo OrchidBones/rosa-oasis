@@ -2,7 +2,7 @@
 title: 蓝光BDMV转4K MKV自存教程
 date: 2025-08-27 15:35:42
 categories:
-- [教程, 音视频]
+- [教程, 音视频教程]
 tags:
 - 视频
 ---

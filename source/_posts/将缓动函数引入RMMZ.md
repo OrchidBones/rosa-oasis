@@ -2,7 +2,7 @@
 title: 将缓动函数引入RMMZ
 date: 2025-08-26 23:41:27
 categories:
-- [存档, RM开发, 插件脚本]
+- [存档, RM开发存档, 插件脚本存档]
 tags:
 - RMMV
 - RMMZ

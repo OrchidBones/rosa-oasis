@@ -2,7 +2,7 @@
 title: HonKit生成电子书
 date: 2025-08-27 13:38:32
 categories:
-- [教程, 其他]
+- [教程, 其他教程]
 tags:
 - 创作
 - 阅读

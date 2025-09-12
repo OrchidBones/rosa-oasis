@@ -2,7 +2,7 @@
 title: RMMZ插件开发通用代码片段
 date: 2025-08-26 22:26:40
 categories:
-- [存档, RM开发, 插件脚本]
+- [存档, RM开发存档, 插件脚本存档]
 tags:
 - RMMZ
 - 代码
